@@ -16,5 +16,5 @@ exports.myDataSource = new typeorm_1.DataSource({
     database: process.env.DB_DATABASE,
     entities: ["dist/entitys/*.js"],
     // logging: true,
-    synchronize: true
+    synchronize: false
 });
