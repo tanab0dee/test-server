@@ -273,7 +273,7 @@ exports.updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         if (req.file) {
             if (user.profileImage && user.profileImage !== 'noimage.jpg') { // เพิ่มเงื่อนไขในการตรวจสอบว่าไม่ใช่ 'noimage.jpg'
                 try {
-                    fs_1.default.unlink('/dist/uploads/' + user.profileImage, (err) => {
+                    fs_1.default.unlink('/uploads/' + user.profileImage, (err) => {
                         if (err) {
                             console.log('Error deleting old profile image:', err);
                         }
