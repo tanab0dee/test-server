@@ -27,7 +27,7 @@ const port = process.env.PORT || 8081;
 app.use(body_parser_1.default.json());
 app.use((0, cookie_parser_1.default)());
 app.use((0, cors_1.default)({
-    origin: ['https://test-client-sfiav8.vercel.app', '*'],
+    origin: ['*'],
     credentials: true
 }));
 app.use((0, morgan_1.default)('dev'));
