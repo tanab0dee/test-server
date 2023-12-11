@@ -121,8 +121,8 @@ exports.login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             id: user.id,
         }, process.env.JWT_REFRESH_SECRET_KEY, { expiresIn: "1w" });
         res.cookie("refreshToken", refreshToken, {
-            httpOnly: true,
-            secure: true,
+            // secure: true,
+            // httpOnly: true,
             maxAge: 7 * 24 * 60 * 60 * 1000, //7day
         });
         const expired_at = new Date();
@@ -272,7 +272,7 @@ exports.updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         if (req.file) {
             if (user.profileImage && user.profileImage !== 'noimage.jpg') { // เพิ่มเงื่อนไขในการตรวจสอบว่าไม่ใช่ 'noimage.jpg'
                 try {
-                    fs_1.default.unlink('dist/uploads/' + user.profileImage, (err) => {
+                    fs_1.default.unlink('../Server/src/uploads/' + user.profileImage, (err) => {
                         if (err) {
                             console.log('Error deleting old profile image:', err);
                         }
