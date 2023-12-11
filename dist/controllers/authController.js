@@ -122,7 +122,6 @@ exports.login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }, process.env.JWT_REFRESH_SECRET_KEY, { expiresIn: "1w" });
         res.cookie("refreshToken", refreshToken, {
             secure: true,
-            httpOnly: true,
             maxAge: 7 * 24 * 60 * 60 * 1000, //7day
         });
         const expired_at = new Date();
